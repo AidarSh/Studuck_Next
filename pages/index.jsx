@@ -4,6 +4,7 @@ import SortAndSettings from "../components/SortAndSettings";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import Head from "next/head";
 
 export default function Home({ data }) {
   const settings = useSelector((state) => state.settings);
@@ -25,6 +26,19 @@ export default function Home({ data }) {
   // }
   return (
     <>
+      <Head>
+        <title>Studuck - сайт для студентов</title>
+        <meta
+          name="description"
+          content="Студак - универсальный помощник для студента"
+        />
+        <meta
+          name="keywords"
+          content="studuck, студак, рейтинг вузов, топ вузы, вузы, вузы россии"
+        />
+        <meta name="yandex-verification" content="e40e9e6f90726afa" />
+      </Head>
+
       <SortAndSettings />
 
       {settings.search !== "" && data.length === 0 ? (
@@ -59,7 +73,7 @@ export async function getServerSideProps({ query }) {
     query.state === undefined ? "" : `&state_univers=${query.state}`;
   const search = query.search === undefined ? "" : `&search=${query.search}`;
   const res = await fetch(
-    `http://127.0.0.1:8000/api/?city=${city}${arm}${hostel}${state}${search}`
+    `http://api.studuck.ru/api/?city=${city}${arm}${hostel}${state}${search}`
   );
   const data = await res.json();
   return {

@@ -1,4 +1,4 @@
-import Dev from "../components/dev";
+import Dev from "../components/Dev";
 
 export default function Specialties() {
   return (

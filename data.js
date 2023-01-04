@@ -4,3 +4,6 @@ export const menuBtn = [
   { name: "Специальности", link: "/specialties" },
   { name: "Новости", link: "/news" },
 ];
+
+    
+
