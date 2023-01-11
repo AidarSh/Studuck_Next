@@ -1,0 +1,10 @@
+User-Agent: *
+Disallow: *city=*
+Disallow: *arm=*
+Disallow: *hostel=*
+Disallow: *state=*
+Disallow: /calculate
+Disallow: /specialties
+Disallow: /news
+Disallow: /about-us
+Disallow: *.png

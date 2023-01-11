@@ -1,10 +1,10 @@
-import styles from "../styles/Home.module.scss";
-import VuzCard from "../components/VuzCard";
-import SortAndSettings from "../components/SortAndSettings";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Head from "next/head";
+
+import VuzCard from "../components/VuzCard";
+import SortAndSettings from "../components/SortAndSettings";
 
 export default function Home({ data }) {
   const settings = useSelector((state) => state.settings);
@@ -20,10 +20,6 @@ export default function Home({ data }) {
     router.push(`?${query}`);
   }, [settings.finallyBtn]);
   console.log(data);
-  // if (settings.search !== "" && data.length === 0) {
-  //   console.log("dwadawdawdwa");
-  //   return <h1>Ничего не найдено</h1>;
-  // }
   return (
     <>
       <Head>
@@ -52,11 +48,17 @@ export default function Home({ data }) {
             rating={obj.rating}
             desc={obj.fullname}
             img={obj.logo}
+            img_alt={obj.alt_text}
             url={obj.slug}
             state={obj.benefits_univers.state_univers}
             arm={obj.benefits_univers.arm_univers}
             hostel={obj.benefits_univers.hostel_univers}
-            money={obj.info_stateandpaid.paid_price}
+            paid_price={obj.info_stateandpaid.paid_price}
+            paid_point={obj.info_stateandpaid.paid_point}
+            paid_place={obj.info_stateandpaid.paid_place}
+            state_price={obj.info_stateandpaid.state_price}
+            state_point={obj.info_stateandpaid.state_point}
+            state_place={obj.info_stateandpaid.state_place}
           />
         ))
       )}

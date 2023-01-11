@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+
 import { setOpenMenu } from "../redux/slices/menuSlice";
 
 export default function Header({}) {
@@ -21,9 +22,6 @@ export default function Header({}) {
       <div className="header_search hidden">
         <input className="desc_input" placeholder="Поиск" type="text" />
       </div>
-      {/* <div className="header_desc">
-        <img src="../img/app.png" alt="User" className="w-12" />
-      </div> */}
     </div>
   );
 }

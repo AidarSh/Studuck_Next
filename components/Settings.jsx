@@ -18,12 +18,6 @@ export default function SortAndSetting() {
   const data = [
     { name: "Казань" },
     { name: "Москва" },
-    { name: "Елабуга" },
-    { name: "Омск" },
-    { name: "Киев" },
-    { name: "Астана" },
-    { name: "Новосибирск" },
-    { name: "Челны" },
   ];
   return (
     <div className="settings">

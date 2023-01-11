@@ -3,14 +3,20 @@ import Link from "next/link";
 export default function VuzCard({
   rating,
   img,
+  img_alt,
   title,
   city,
   desc,
   url,
-  money,
   hostel,
   state,
   arm,
+  paid_price,
+  paid_point,
+  paid_place,
+  state_price,
+  state_point,
+  state_place,
 }) {
   return (
     <>
@@ -20,7 +26,7 @@ export default function VuzCard({
             <div className="flex-none w-14 font-medium text-center">
               <span className="text-sm">#</span> {rating}
             </div>
-            <img className="w-14  flex-none mx-4" src={img} alt="LogoVuz" />
+            <img className="w-14  flex-none mx-4" src={img} alt={img_alt} />
             <div className="flex-1">
               <div className="flex justify-between  items-center">
                 <div className="flex items-end">
@@ -42,10 +48,10 @@ export default function VuzCard({
                   <span className="font-medium">Бюдж. обучение</span>
                 </li>
                 <li>
-                  от <span className="font-medium">173</span> баллов
+                  от <span className="font-medium">{state_point}</span> баллов
                 </li>
                 <li>
-                  <span className="font-medium">500</span> мест
+                  <span className="font-medium">{state_place}</span> мест
                 </li>
               </ul>
             </div>
@@ -55,13 +61,13 @@ export default function VuzCard({
                   <span className="font-medium">Плат. обучение</span>
                 </li>
                 <li>
-                  от <span className="font-medium">125</span> баллов
+                  от <span className="font-medium">{paid_point}</span> баллов
                 </li>
                 <li>
-                  <span className="font-medium">300</span> мест
+                  <span className="font-medium">{paid_place}</span> мест
                 </li>
                 <li>
-                  от <span className="font-medium">{money}</span> ₽
+                  от <span className="font-medium">{paid_price}</span> ₽
                 </li>
               </ul>
             </div>
